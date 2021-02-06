@@ -4,11 +4,11 @@ import React from 'react';
 import algoliasearch from 'algoliasearch/lite';
 
 const searchClient = algoliasearch(
-  process.env.ALGOLIA_APPLICATION_ID,
-  process.env.ALGOLIA_API_KEY
+  process.env.REACT_APP_ALGOLIA_APPLICATION_ID,
+  process.env.REACT_APP_ALGOLIA_API_KEY
 );
 
-const index = searchClient.initIndex('Articles');
+const index = searchClient.initIndex('SampleArticles');
 
 /*
 TODO: This is an unoptimal way of rendering articles for 2 reasons:
@@ -20,6 +20,37 @@ This is redundant, only one instance is needed and we can store that instance
 in a global store using redux.
  */
 
+ const StyledBackgroundHeader = styled.div`
+   background-color: #0553E6;
+   padding: 5%;
+   padding-right: 25%;
+   padding-left: 25%;
+ `;
+ const StyledBackgroundBody = styled.div`
+   padding-right: 20%;
+   padding-left: 20%;
+   margin: 10%;
+   font-size: 20px;
+ `;
+ const StyledTitle = styled.text`
+   font-size: 25px;
+   color: white;
+   font-weight: bold;
+ `;
+
+ // function App(){
+ //   return (
+ //     <div>
+ //       <StyledBackgroundHeader>
+ //         <StyledTitle>Puzzl | Help Center</StyledTitle>
+ //         <div></div>
+ //         <StyledTitle>Advice and Answers from the Puzzl Team</StyledTitle>
+ //       </StyledBackgroundHeader>
+ //         <HCSearch></HCSearch>
+ //     </div>
+ //   )
+ // }
+
 class Article extends React.Component {
   constructor(props){
     super(props);
@@ -30,6 +61,7 @@ class Article extends React.Component {
     index.search('').then(({ hits }) => {
       const obj = hits.filter( x => x.title == this.state.current_title);
       if (obj){
+        obj[0].title = obj[0].title.toUpperCase();
         this.setState({
           article: obj[0]
         })
@@ -40,9 +72,12 @@ class Article extends React.Component {
   render() {
     return (
       <div>
-        <div>{this.state.article.title}</div>
-        <div>{this.state.article.date}</div>
-        <div>{this.state.article.body}</div>
+        <StyledBackgroundHeader>
+          <StyledTitle>"{this.state.article.title}"</StyledTitle>
+          <div></div>
+          <StyledTitle>Created {this.state.article.date}</StyledTitle>
+        </StyledBackgroundHeader>
+        <StyledBackgroundBody>{this.state.article.body}</StyledBackgroundBody>
       </div>
     )
   }

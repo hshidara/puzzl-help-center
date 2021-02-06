@@ -19,7 +19,7 @@ const searchClient = algoliasearch(
   process.env.REACT_APP_ALGOLIA_API_KEY
 );
 
-const index = searchClient.initIndex('Articles');
+const index = searchClient.initIndex('SampleArticles');
 
 const StyledBackgroundHeader = styled.div`
   background-color: #0553E6;
@@ -90,6 +90,7 @@ const StyledArticlePreviewElement = styled.div`
   margin: 15px;
   font-weight: bold;
   font-size: 18px;
+  color: black;
 `;
 const StyledArticlePreviewElementBody = styled.div`
   margin: 15px;
@@ -103,10 +104,10 @@ function Hit(props) {
 
     <StyledPreview href={url}>
       <StyledArticlePreviewElement className="hit-title">
-        {props.hit.title}
+        {props.hit.title.toUpperCase()}
       </StyledArticlePreviewElement>
 
-      <StyledArticlePreviewElement className="hit-date">Date: {props.hit.date}</StyledArticlePreviewElement>
+      <StyledArticlePreviewElement className="hit-date">Created {props.hit.date}</StyledArticlePreviewElement>
 
       <StyledArticlePreviewElementBody className="hit-body">
         {props.hit.body.substring(0,50).concat('...')}
