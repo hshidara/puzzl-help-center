@@ -4,11 +4,11 @@ import React from 'react';
 import algoliasearch from 'algoliasearch/lite';
 
 const searchClient = algoliasearch(
-  '0RI1GYB5BY',
-  'd64702d8a0775a9b1ae77975c547d43c'
+  process.env.ALGOLIA_APPLICATION_ID,
+  process.env.ALGOLIA_API_KEY
 );
 
-const index = searchClient.initIndex('SampleArticles');
+const index = searchClient.initIndex('Articles');
 
 /*
 TODO: This is an unoptimal way of rendering articles for 2 reasons:
@@ -24,7 +24,7 @@ class Article extends React.Component {
   constructor(props){
     super(props);
     const title = window.location.pathname.split('/')[2];
-    this.state = {current_title: title,article: {}};
+    this.state = {current_title: title, article: {}};
   }
   componentDidMount(){
     index.search('').then(({ hits }) => {
@@ -40,7 +40,6 @@ class Article extends React.Component {
   render() {
     return (
       <div>
-
         <div>{this.state.article.title}</div>
         <div>{this.state.article.date}</div>
         <div>{this.state.article.body}</div>

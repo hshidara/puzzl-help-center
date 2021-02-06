@@ -15,11 +15,11 @@ import PropTypes from 'prop-types';
 import './App.css';
 
 const searchClient = algoliasearch(
-  '0RI1GYB5BY',
-  'd64702d8a0775a9b1ae77975c547d43c'
+  process.env.REACT_APP_ALGOLIA_APPLICATION_ID,
+  process.env.REACT_APP_ALGOLIA_API_KEY
 );
 
-const index = searchClient.initIndex('SampleArticles');
+const index = searchClient.initIndex('Articles');
 
 const StyledBackgroundHeader = styled.div`
   background-color: #0553E6;
