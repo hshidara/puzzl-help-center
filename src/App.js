@@ -197,7 +197,6 @@ function HelpCenter(){
   return (
     <div>
       <HCHeader>
-
       </HCHeader>
       <HCBody></HCBody>
     </div>
@@ -239,7 +238,7 @@ const StyledSearchButton = styled.button`
   font-size: 20px;
   height: 60px;
   cursor: pointer;
-  color: black;
+  color: gray;
   background-color: white;
   border: solid white 0;
   font-weight: bold;
@@ -257,9 +256,55 @@ function HCSearchBar(){
   )
 }
 
-function HCBody(){
+const StyledBody = styled.div`
+  background-color: #F3F5F7;
+`;
+
+const StyledArticlePreviews = styled.div`
+  background-color: white;
+  margin: 10px;
+  width: 50%;
+`;
+
+const StyledArticlePreviewElement = styled.div`
+  margin: 15px;
+  font-weight: bold;
+  font-size: 18px;
+`;
+const StyledArticlePreviewElementBody = styled.div`
+  margin: 15px;
+  font-size: 15px;
+  color: gray;
+`;
+
+function HCArticlePreview(props){
+  // const url = '/article?title='.concat(props.title);
+  const url = '/article';
   return (
-    <div></div>
+    <a href={url}>
+      <StyledArticlePreviewElement>
+        {props.title}
+      </StyledArticlePreviewElement>
+      <StyledArticlePreviewElement>
+        {props.date}
+      </StyledArticlePreviewElement>
+      <StyledArticlePreviewElementBody>
+        {props.body.substring(0,150)}
+      </StyledArticlePreviewElementBody>
+    </a>
+  )
+}
+function HCBody(){
+  const articleItems = SampleArticles.map((d) =>
+    <StyledArticlePreviews key={d.title}>
+      <HCArticlePreview title={d.title} date={d.date} body={d.body}></HCArticlePreview>
+    </StyledArticlePreviews>
+  );
+
+  return (
+    <StyledBody>
+      {articleItems}
+    </StyledBody>
   )
 }
 
