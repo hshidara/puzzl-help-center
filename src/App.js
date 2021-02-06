@@ -81,8 +81,9 @@ const StyledBody = styled.div`
 `;
 
 const StyledPreview = styled.a`
-  background-color: white;
+  background-color: gray;
   width: 50%;
+  text-decoration: none;
 `;
 
 const StyledArticlePreviewElement = styled.div`
