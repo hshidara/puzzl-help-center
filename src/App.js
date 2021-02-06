@@ -19,7 +19,7 @@ const searchClient = algoliasearch(
   process.env.REACT_APP_ALGOLIA_API_KEY
 );
 
-const index = searchClient.initIndex('SampleArticles');
+const index = searchClient.initIndex('Articles');
 
 const StyledBackgroundHeader = styled.div`
   background-color: #0553E6;
@@ -59,7 +59,7 @@ function App(){
 function HCSearch(){
   return (
     <div className="ais-InstantSearch">
-      <InstantSearch indexName="SampleArticles" searchClient={searchClient}>
+      <InstantSearch indexName="Articles" searchClient={searchClient}>
         <div className="right-panel">
           <StyledBackgroundSearch>
             <SearchBox />

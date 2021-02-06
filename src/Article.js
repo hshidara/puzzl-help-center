@@ -8,7 +8,7 @@ const searchClient = algoliasearch(
   process.env.REACT_APP_ALGOLIA_API_KEY
 );
 
-const index = searchClient.initIndex('SampleArticles');
+const index = searchClient.initIndex('Articles');
 
 /*
 TODO: This is an unoptimal way of rendering articles for 2 reasons:
@@ -38,28 +38,17 @@ in a global store using redux.
    font-weight: bold;
  `;
 
- // function App(){
- //   return (
- //     <div>
- //       <StyledBackgroundHeader>
- //         <StyledTitle>Puzzl | Help Center</StyledTitle>
- //         <div></div>
- //         <StyledTitle>Advice and Answers from the Puzzl Team</StyledTitle>
- //       </StyledBackgroundHeader>
- //         <HCSearch></HCSearch>
- //     </div>
- //   )
- // }
-
 class Article extends React.Component {
   constructor(props){
     super(props);
-    const title = window.location.pathname.split('/')[2];
+    const title = window.location.pathname.split('/')[2].replace(/%20/g, " ");
+    console.log(title);
     this.state = {current_title: title, article: {}};
   }
   componentDidMount(){
     index.search('').then(({ hits }) => {
       const obj = hits.filter( x => x.title == this.state.current_title);
+      console.log(obj)
       if (obj){
         obj[0].title = obj[0].title.toUpperCase();
         this.setState({
