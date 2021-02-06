@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.ais-SearchBox { height: 30px; }
+.ais-InstantSearch {}
+.ais-Hits-item { margin-bottom: 1em; width: calc(50% - 1rem) }
