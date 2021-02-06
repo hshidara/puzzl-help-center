@@ -2,196 +2,257 @@ import logo from './logo.svg';
 import './App.css';
 import styled from "styled-components";
 
-const SampleArticles = [
-  {
-    'title': 'article1',
-    'date': '11/11/11',
-    'recommended': false,
-    'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
-      id est laborum.'
-  },
-  {
-    'title': 'article2',
-    'date': '11/11/11',
-    'recommended': false,
-    'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
-      id est laborum.'
-  },
-  {
-    'title': 'article3',
-    'date': '11/11/11',
-    'recommended': false,
-    'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
-      id est laborum.'
-  },
-  {
-    'title': 'article4',
-    'date': '11/11/11',
-    'recommended': false,
-    'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
-      id est laborum.'
-  },
-  {
-    'title': 'article5',
-    'date': '11/11/11',
-    'recommended': false,
-    'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
-      id est laborum.'
-  },
-  {
-    'title': 'article6',
-    'date': '11/11/11',
-    'recommended': false,
-    'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
-      id est laborum.'
-  },
-  {
-    'title': 'article7',
-    'date': '11/11/11',
-    'recommended': false,
-    'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
-      id est laborum.'
-  },
-  {
-    'title': 'article8',
-    'date': '11/11/11',
-    'recommended': false,
-    'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
-      id est laborum.'
-  },
-  {
-    'title': 'article9',
-    'date': '11/11/11',
-    'recommended': false,
-    'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
-      id est laborum.'
-  },
-  {
-    'title': 'article10',
-    'date': '11/11/11',
-    'recommended': false,
-    'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
-      id est laborum.'
-  },
-  {
-    'title': 'article11',
-    'date': '11/11/11',
-    'recommended': false,
-    'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
-      id est laborum.'
-  },
-  {
-    'title': 'article12',
-    'date': '11/11/11',
-    'recommended': true,
-    'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
-      id est laborum.'
-  },
-  {
-    'title': 'article13',
-    'date': '11/11/11',
-    'recommended': true,
-    'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
-      id est laborum.'
-  },
-  {
-    'title': 'article14',
-    'date': '11/11/11',
-    'recommended': true,
-    'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
-      id est laborum.'
-  },
-  {
-    'title': 'article15',
-    'date': '11/11/11',
-    'recommended': true,
-    'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
-      esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
-      id est laborum.'
-  }
-]
+import algoliasearch from 'algoliasearch/lite';
+import React, { Component } from 'react';
+import {
+  InstantSearch,
+  Hits,
+  SearchBox,
+  Pagination,
+  Highlight,
+  ClearRefinements,
+  RefinementList,
+  Configure,
+} from 'react-instantsearch-dom';
+import PropTypes from 'prop-types';
+import './App.css';
 
-function App() {
+const searchClient = algoliasearch(
+  '0RI1GYB5BY',
+  'd64702d8a0775a9b1ae77975c547d43c'
+);
+
+// const SampleArticles = [
+//   {
+//     'title': 'article1',
+//     'date': '11/11/11',
+//     'recommended': false,
+//     'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
+//       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
+//       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
+//       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
+//       esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
+//       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
+//       id est laborum.'
+//   },
+//   {
+//     'title': 'article2',
+//     'date': '11/11/11',
+//     'recommended': false,
+//     'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
+//       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
+//       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
+//       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
+//       esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
+//       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
+//       id est laborum.'
+//   },
+//   {
+//     'title': 'article3',
+//     'date': '11/11/11',
+//     'recommended': false,
+//     'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
+//       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
+//       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
+//       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
+//       esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
+//       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
+//       id est laborum.'
+//   },
+//   {
+//     'title': 'article4',
+//     'date': '11/11/11',
+//     'recommended': false,
+//     'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
+//       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
+//       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
+//       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
+//       esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
+//       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
+//       id est laborum.'
+//   },
+//   {
+//     'title': 'article5',
+//     'date': '11/11/11',
+//     'recommended': false,
+//     'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
+//       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
+//       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
+//       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
+//       esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
+//       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
+//       id est laborum.'
+//   },
+//   {
+//     'title': 'article6',
+//     'date': '11/11/11',
+//     'recommended': false,
+//     'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
+//       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
+//       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
+//       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
+//       esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
+//       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
+//       id est laborum.'
+//   },
+//   {
+//     'title': 'article7',
+//     'date': '11/11/11',
+//     'recommended': false,
+//     'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
+//       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
+//       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
+//       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
+//       esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
+//       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
+//       id est laborum.'
+//   },
+//   {
+//     'title': 'article8',
+//     'date': '11/11/11',
+//     'recommended': false,
+//     'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
+//       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
+//       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
+//       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
+//       esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
+//       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
+//       id est laborum.'
+//   },
+//   {
+//     'title': 'article9',
+//     'date': '11/11/11',
+//     'recommended': false,
+//     'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
+//       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
+//       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
+//       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
+//       esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
+//       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
+//       id est laborum.'
+//   },
+//   {
+//     'title': 'article10',
+//     'date': '11/11/11',
+//     'recommended': false,
+//     'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
+//       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
+//       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
+//       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
+//       esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
+//       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
+//       id est laborum.'
+//   },
+//   {
+//     'title': 'article11',
+//     'date': '11/11/11',
+//     'recommended': false,
+//     'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
+//       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
+//       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
+//       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
+//       esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
+//       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
+//       id est laborum.'
+//   },
+//   {
+//     'title': 'article12',
+//     'date': '11/11/11',
+//     'recommended': true,
+//     'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
+//       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
+//       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
+//       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
+//       esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
+//       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
+//       id est laborum.'
+//   },
+//   {
+//     'title': 'article13',
+//     'date': '11/11/11',
+//     'recommended': true,
+//     'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
+//       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
+//       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
+//       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
+//       esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
+//       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
+//       id est laborum.'
+//   },
+//   {
+//     'title': 'article14',
+//     'date': '11/11/11',
+//     'recommended': true,
+//     'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
+//       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
+//       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
+//       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
+//       esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
+//       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
+//       id est laborum.'
+//   },
+//   {
+//     'title': 'article15',
+//     'date': '11/11/11',
+//     'recommended': true,
+//     'body' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
+//       eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim \
+//       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \
+//       commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \
+//       esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat \
+//       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim \
+//       id est laborum.'
+//   }
+// ]
+
+class App extends Component {
+  render() {
+    return (
+      <div className="ais-InstantSearch">
+        <h1>React InstantSearch e-commerce demo</h1>
+        <InstantSearch indexName="SampleArticles" searchClient={searchClient}>
+          <div className="left-panel">
+            <ClearRefinements />
+            <h2>Articles</h2>
+            <RefinementList attribute="title" />
+            <Configure hitsPerPage={8} />
+          </div>
+          <div className="right-panel">
+            <SearchBox />
+            <Hits hitComponent={Hit} />
+            <Pagination />
+          </div>
+        </InstantSearch>
+      </div>
+    );
+  }
+}
+
+function Hit(props) {
   return (
-    <div className="App">
-      <HelpCenter/>
+    <div>
+      <div className="hit-title">
+        <Highlight attribute="title" hit={props.hit} />
+      </div>
+      <div className="hit-body">
+        <Highlight attribute="body" hit={props.hit} />
+      </div>
+      <div className="hit-date">{props.hit.date}</div>
     </div>
   );
 }
+
+Hit.propTypes = {
+  hit: PropTypes.object.isRequired,
+};
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <HelpCenter/>
+//     </div>
+//   );
+// }
 
 function HelpCenter(){
   return (
@@ -295,15 +356,14 @@ function HCArticlePreview(props){
   )
 }
 function HCBody(){
-  const articleItems = SampleArticles.map((d) =>
-    <StyledArticlePreviews key={d.title}>
-      <HCArticlePreview title={d.title} date={d.date} body={d.body}></HCArticlePreview>
-    </StyledArticlePreviews>
-  );
+  // const articleItems = SampleArticles.map((d) =>
+  //   <StyledArticlePreviews key={d.title}>
+  //     <HCArticlePreview title={d.title} date={d.date} body={d.body}></HCArticlePreview>
+  //   </StyledArticlePreviews>
+  // );
 
   return (
     <StyledBody>
-      {articleItems}
     </StyledBody>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import App2 from './App2';
 import Article from './Article';
 import reportWebVitals from './reportWebVitals';
 
@@ -15,7 +16,6 @@ import {
 ReactDOM.render(
   <Router>
     <Route path="/" component={App} />
-    <Route path="/article" component={Article} />
   </Router>,
   document.getElementById('root')
 );
